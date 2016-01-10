@@ -23,7 +23,7 @@ var mainView = myApp.addView('.view-main', {
 });
 
 myApp.onPageInit('introslide', function (page) {
-    responsiveVoice.speak("Dear Doctor In next 10 seconds you will hear 5 unique features of megaheal that make megaheal. Superior to other topical wound care products. Remember these features and in next 20 seconds try to find them on the screen. If you able to find all 5 features you will be awarded a special gift.");
+    responsiveVoice.speak("Dear Doctor In next 10 seconds you will hear 5 unique features of megaheal that make megaheal Superior to other topical wound care products remember these features and in next 20 seconds try to find them on the screen if you able to find all 5 features you will be awarded a special gift.");
     $('.intro_next').click(function() {
         mainView.router.loadPage('q1.html');
     });
@@ -37,7 +37,7 @@ myApp.onPageInit('question_1', function (page) {
         l4 = '32 ppm';
         l5 = 'American Biotech Labs';
         page_id = 2;
-        var characters = 'First - '+l1+'. Second - '+l2+'. Third - '+l3+'. Fourth - '+l4+'. Fifth - '+l5+' .';
+        var characters = 'First - '+l1+', Second - '+l2+', Third - '+l3+', Fourth - '+l4+', Fifth - '+l5+' .';
     } else if (page_id == 2) {
         l1 = 'Patented';
         l2 = 'Surgical wounds';
@@ -45,7 +45,7 @@ myApp.onPageInit('question_1', function (page) {
         l4 = 'Faster healing';
         l5 = 'Least toxic';
         page_id = 3;
-        var characters = 'First - '+l1+'. Second - '+l2+'. Third - '+l3+'. Fourth - '+l4+'. Fifth - '+l5+' .';
+        var characters = 'First - '+l1+', Second - '+l2+', Third - '+l3+', Fourth - '+l4+', Fifth - '+l5+' .';
     } else if (page_id == 3) {
         l1 = 'Scarless healing';
         l2 = 'Antiseptic';
@@ -53,7 +53,7 @@ myApp.onPageInit('question_1', function (page) {
         l4 = 'Collagen synthesis';
         l5 = 'Patented';
         page_id = 4;
-        var characters = 'First - '+l1+'. Second - '+l2+'. Third - '+l3+'. Fourth - '+l4+'. Fifth - '+l5+' .';
+        var characters = 'First - '+l1+', Second - '+l2+', Third - '+l3+', Fourth - '+l4+', Fifth - '+l5+' .';
     } else if (page_id == 4) {
         l1 = 'Traumatic wounds';
         l2 = 'Clear gel';
@@ -61,7 +61,7 @@ myApp.onPageInit('question_1', function (page) {
         l4 = 'Antimicrobial';
         l5 = 'Granulation tissue formation';
         page_id = 5;
-        var characters = 'First - '+l1+'. Second - '+l2+'. Third - '+l3+'. Fourth - '+l4+'. Fifth - '+l5+' .';
+        var characters = 'First - '+l1+', Second - '+l2+', Third - '+l3+', Fourth - '+l4+', Fifth - '+l5+' .';
     } else if (page_id == 5) {
         l1 = 'Nanosilver';
         l2 = 'Atibiofilm';
@@ -69,7 +69,7 @@ myApp.onPageInit('question_1', function (page) {
         l4 = 'USFDA approved';
         l5 = 'Least toxic';
         page_id = 1;
-        var characters = 'First - '+l1+'. Second - '+l2+'. Third - '+l3+'. Fourth - '+l4+'. Fifth - '+l5+' .';
+        var characters = 'First - '+l1+', Second - '+l2+', Third - '+l3+', Fourth - '+l4+', Fifth - '+l5+' .';
     }
 
     $('.letter-one').text(l1);
