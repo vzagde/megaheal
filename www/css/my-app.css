@@ -1,0 +1,90 @@
+h1 {
+	font-family: open_sansbold;
+	font-size: 3em;
+	padding: 0;
+	line-height: 1em;
+}
+
+h2 {
+	font-size: 1.5em;
+	line-height: 1em;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.top-right-logo {
+	position: absolute;
+	top:1%;
+	right:1%;
+	width: 20%;
+}
+.list-block input[type="text"],.list-block textarea{
+  font-size: 22px;
+}
+
+.q {
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-bottom: 5%;*/
+  margin-top: 20%;
+  text-align: center;
+  color: #26599F;
+  width: 80%;
+  font-size: 2.2em;
+  line-height: 1.2em;
+}
+
+.radialtimer {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+.radialtimer .n {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 75px;
+  font-family: "open_sansbold";
+  font-size: 24px;
+  color: #888;
+}
+
+.radialtimer .slice {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  clip: rect(0px, 75px, 75px, 37.5px);
+}
+
+.radialtimer .slice.nc {
+  clip: rect(auto, auto, auto, auto);
+}
+
+.radialtimer .slice .q {
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  border: 9px white solid;
+  border-radius: 50%;
+  clip: rect(0px, 37.5px, 37.5px, 0px);
+  z-index: 2;
+}
+
+.radialtimer .slice .pie {
+  border: 8px #26599F solid;
+  position: absolute;
+  width: 59px;
+  height: 59px;
+  clip: rect(0px, 37.5px, 75px, 0px);
+  border-radius: 50%;
+  transition: all 1s linear;
+  z-index: 1;
+}
