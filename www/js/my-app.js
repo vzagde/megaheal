@@ -23,7 +23,8 @@ var mainView = myApp.addView('.view-main', {
 });
 
 myApp.onPageInit('introslide', function (page) {
-    responsiveVoice.speak("Dear Doctor In next 10 seconds you will hear 5 unique features of megaheal that make megaheal Superior to other topical wound care products remember these features and in next 20 seconds try to find them on the screen if you able to find more than 3 features you will be awarded a special gift.");
+    var cont = "Dear Doctor In next 10 seconds you will hear 5 unique features of megaheal that make megaheal Superior to other topical wound care products remember these features and in next 20 seconds try to find them on the screen if you able to find more than 3 features you will be awarded a special gift.";
+    responsiveVoice.speak(cont);
     $('.intro_next').click(function() {
         mainView.router.loadPage('q1.html');
     });
@@ -53,7 +54,7 @@ myApp.onPageInit('question_1', function (page) {
         page_id = 4;
     } else if (page_id == 4) {
         l1 = 'Traumatic wounds';
-        l2 = 'Clear gel';
+        l2 = 'Clear Gel';
         l3 = 'Faster healing';
         l4 = 'Antimicrobial';
         l5 = 'Granulation tissue formation';
@@ -67,14 +68,12 @@ myApp.onPageInit('question_1', function (page) {
         page_id = 1;
     }
     var characters = 'First - '+l1+' Second - '+l2+' Third - '+l3+' Fourth - '+l4+' Fifth - '+l5+' .';
-
+    responsiveVoice.speak(characters);
     $('.letter-one').text(l1);
     $('.letter-two').text(l2);
     $('.letter-three').text(l3);
     $('.letter-four').text(l4);
     $('.letter-five').text(l5);
-
-    responsiveVoice.speak(characters);
 
     correct_words = [l1, l2, l3, l4, l5];
     Timer = new radialTimer();
@@ -89,8 +88,8 @@ myApp.onPageInit('gameover', function (page) {
 myApp.onPageInit('thankyou', function (page) {
     var msg = 'You have identified '+correct_ans+' correct words. Thanks for participating <img src="img/Logo.png" alt="" style="width:40%; float: right">';
     $('.thankyou_msg').html(msg);
-    Timer = new radialTimer();
-    Timer.init("ty_timer", 5, function(){mainView.router.load({url:'index.html'})});
+    // Timer = new radialTimer();
+    // Timer.init("ty_timer", 5, function(){mainView.router.load({url:'index.html'})});
 });
 
 myApp.onPageInit('question_2', function (page) {
@@ -100,12 +99,16 @@ myApp.onPageInit('question_2', function (page) {
         for (var i = 0; i < correct_words.length; i++) {
             console.log(correct_ans);
             if (correct_words[i] == $(this).text()) {
+                if (correct_ans < correct_words.length) {
+                    correct_ans += 1;
+                    t = $('#q2_timer').text();
+                }
                 $(this).css('color', 'green');
-                correct_ans += 1;
-                t = $('#q2_timer').text();
                 return false;
             } else {
-                $(this).css('color', 'red');
+                if (correct_ans < correct_words.length) {
+                    $(this).css('color', 'red');
+                }
             }
         };
     });
