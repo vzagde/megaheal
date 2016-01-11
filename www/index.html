@@ -83,7 +83,8 @@
 
       .allwords{
         color: #26599F;
-        width: 100%;
+        width: auto;
+        padding: 0.5% 5%;
         line-height: 2.5em;
         margin: 0;
         font-size: 1.7em;
@@ -91,22 +92,7 @@
         text-align: center;
       }
 
-      .word-1{
-        display: inline-block;
-        width: 33%;
-      }
-
-      .word-2{
-        display: inline-block;
-        width: 33%;
-      }
-
-      .word-3{
-        display: inline-block;
-        width: 33%;
-      }
-
-      @media all and (max-width: 770px) {
+      @media all and (max-width: 801px) {
 
         .user_details_check, .q1_button, .q2_button, .q3_button, .q4_button{
           height: 250px;
@@ -121,44 +107,20 @@
         .lblname{
           font-size: 1.5em;
         }
-
-        .word-1{
-          display: inline-block;
-          width: 33%;
-          float: left;
-        }
-
-        .word-2{
-          display: inline-block;
-          width: 33%;
-          float: left;
-        }
-
-        .word-3{
-          display: inline-block;
-          width: 33%;
-          float: left;
-        }
       }
     </style>
     <link rel="icon" href="img/icon.png">
   </head>
   <body class="theme-indigo" onload="onLoad()">
-    <!-- Views-->
     <div class="views">
-      <!-- Your main view, should have "view-main" class-->
       <div class="view view-main">
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages">
-          <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
-            <!-- Scrollable page content-->
             <div class="page-content">
       				<img src="img/Logo.png" style="width: 60%;display: block;margin: 0 auto; padding-top: 10%;" alt="">
       				<h1 class="text-center" style="color:#26599F;margin-top: 10%;">Welcome to the quiz.</h1>
       				<h2 class="text-center" style="color:#26599F;">Identify Correct Words to win a Grand prize.</h2> 
       				<a href="intro_slide.html" style="width: 200px; margin: 40px auto; height: 90px" class="button">
-                <!-- Start -->
                 <img src="img/PlayLogo.png" class="img-play" alt="">
               </a>
             </div>
