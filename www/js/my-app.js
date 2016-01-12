@@ -86,10 +86,10 @@ myApp.onPageInit('gameover', function (page) {
 });
 
 myApp.onPageInit('thankyou', function (page) {
-    var msg = 'You have identified '+correct_ans+' correct words. Thanks for participating <img src="img/Logo.png" alt="" style="width:40%; float: right">';
+    var msg = 'You have identified '+correct_ans+' correct words. Thanks for participating <img src="img/Logo.png" alt="" style="width:50%; float: right">';
     $('.thankyou_msg').html(msg);
-    // Timer = new radialTimer();
-    // Timer.init("ty_timer", 5, function(){mainView.router.load({url:'index.html'})});
+    Timer = new radialTimer();
+    Timer.init("ty_timer", 5, function(){mainView.router.load({url:'index.html'})});
 });
 
 myApp.onPageInit('question_2', function (page) {
