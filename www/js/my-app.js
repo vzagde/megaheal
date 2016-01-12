@@ -1,15 +1,3 @@
-function playStream() {
-  try {
-    var myaudio = new Audio('mp3/tune.mp3');
-    myaudio.id = 'playerMyAdio';
-    myaudio.play();
-    console.log("Audio Played");
-  } catch (e) {
-    console.log("Audio Could not played");
-    // alert('no audio support!');
-  }
-}
-
 var base_url = "http://kreaserv.in/megazolid_admin/";
 var Timer;
 var email_id = '';
@@ -35,15 +23,15 @@ var mainView = myApp.addView('.view-main', {
 });
 
 myApp.onPageInit('introslide', function (page) {
-    var cont = "Dear Doctor In next 10 seconds you will hear 5 unique features of megaheal that make megaheal Superior to other topical wound care products remember these features and in next 20 seconds try to find them on the screen if you able to find more than 3 features you will be awarded a special gift.";
-    playStream();
-    // responsiveVoice.speak(cont);
+    pager_id = 7;
+    playAudio(pager_id);
     $('.intro_next').click(function() {
         mainView.router.loadPage('q1.html');
     });
 });
 
 myApp.onPageInit('question_1', function (page) {
+    playAudio(page_id);
     if (page_id == 1) {
         l1 = 'Silversol Technology';
         l2 = 'USFDA approved';
@@ -81,7 +69,6 @@ myApp.onPageInit('question_1', function (page) {
         page_id = 1;
     }
     var characters = 'First - '+l1+' Second - '+l2+' Third - '+l3+' Fourth - '+l4+' Fifth - '+l5+' .';
-    // responsiveVoice.speak(characters);
     $('.letter-one').text(l1);
     $('.letter-two').text(l2);
     $('.letter-three').text(l3);
@@ -128,3 +115,62 @@ myApp.onPageInit('question_2', function (page) {
     Timer = new radialTimer();
     Timer.init("q2_timer", 20, function(){mainView.router.load({url:'thankyou.html'})});
 });
+
+function playAudio(tune){
+    if (tune == 1) {
+        var myaudio = new Audio('mp3/tune1.mp3');
+        try {
+            myaudio.id = 'playerMyAdio';
+            myaudio.play();
+            console.log("Audio Played 1");
+        } catch (e) {
+            console.log("Audio Could not played");
+        }
+    } else if (tune == 2) {
+        var myaudio = new Audio('mp3/tune2.mp3');
+        try {
+            myaudio.id = 'playerMyAdio';
+            myaudio.play();
+            console.log("Audio Played 2");
+        } catch (e) {
+            console.log("Audio Could not played");
+        }
+    } else if (tune == 3) {
+        var myaudio = new Audio('mp3/tune3.mp3');
+        try {
+            myaudio.id = 'playerMyAdio';
+            myaudio.play();
+            console.log("Audio Played 3");
+        } catch (e) {
+            console.log("Audio Could not played");
+        }
+    } else if (tune == 4) {
+        var myaudio = new Audio('mp3/tune4.mp3');
+        try {
+            myaudio.id = 'playerMyAdio';
+            myaudio.play();
+            console.log("Audio Played 4");
+        } catch (e) {
+            console.log("Audio Could not played");
+        }
+    } else if (tune == 5) {
+        var myaudio = new Audio('mp3/tune5.mp3');
+        try {
+            myaudio.id = 'playerMyAdio';
+            myaudio.play();
+            console.log("Audio Played 5");
+        } catch (e) {
+            console.log("Audio Could not played");
+        }
+    } else if (tune == 7) {
+        var myaudio = new Audio('mp3/tune7.mp3');
+        try {
+            myaudio.id = 'playerMyAdio';
+            myaudio.play();
+            console.log("Audio Played 7");
+        } catch (e) {
+            console.log("Audio Could not played");
+        }
+    }
+}
+
