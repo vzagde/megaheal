@@ -1,3 +1,15 @@
+function playStream() {
+  try {
+    var myaudio = new Audio('mp3/tune.mp3');
+    myaudio.id = 'playerMyAdio';
+    myaudio.play();
+    console.log("Audio Played");
+  } catch (e) {
+    console.log("Audio Could not played");
+    // alert('no audio support!');
+  }
+}
+
 var base_url = "http://kreaserv.in/megazolid_admin/";
 var Timer;
 var email_id = '';
@@ -24,7 +36,8 @@ var mainView = myApp.addView('.view-main', {
 
 myApp.onPageInit('introslide', function (page) {
     var cont = "Dear Doctor In next 10 seconds you will hear 5 unique features of megaheal that make megaheal Superior to other topical wound care products remember these features and in next 20 seconds try to find them on the screen if you able to find more than 3 features you will be awarded a special gift.";
-    responsiveVoice.speak(cont);
+    playStream();
+    // responsiveVoice.speak(cont);
     $('.intro_next').click(function() {
         mainView.router.loadPage('q1.html');
     });
@@ -68,7 +81,7 @@ myApp.onPageInit('question_1', function (page) {
         page_id = 1;
     }
     var characters = 'First - '+l1+' Second - '+l2+' Third - '+l3+' Fourth - '+l4+' Fifth - '+l5+' .';
-    responsiveVoice.speak(characters);
+    // responsiveVoice.speak(characters);
     $('.letter-one').text(l1);
     $('.letter-two').text(l2);
     $('.letter-three').text(l3);
