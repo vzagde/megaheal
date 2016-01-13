@@ -37,7 +37,7 @@
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" spec="0.2.8" source="pgb" />
+    <gap:plugin name="org.apache.cordova.media" source="pgb" spec="0.2.16" />
     <gap:plugin name="Media" value="org.apache.cordova.AudioHandler" />
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
