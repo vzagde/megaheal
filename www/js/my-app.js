@@ -131,7 +131,7 @@ function playAudio(tune){
             myAudio.currentTime = 0;
             myAudio.muted = false;
             myAudio.correctDuration = myAudio.duration;
-        },1000);
+        },100000);
     });
     // if (tune == 1) {
     //     var myaudio = new Audio('mp3/tune1.mp3');
