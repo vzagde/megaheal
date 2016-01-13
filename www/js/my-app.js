@@ -117,60 +117,77 @@ myApp.onPageInit('question_2', function (page) {
 });
 
 function playAudio(tune){
-    if (tune == 1) {
-        var myaudio = new Audio('mp3/tune1.mp3');
-        try {
-            myaudio.id = 'playerMyAdio';
-            myaudio.play();
-            console.log("Audio Played 1");
-        } catch (e) {
-            console.log("Audio Could not played");
-        }
-    } else if (tune == 2) {
-        var myaudio = new Audio('mp3/tune2.mp3');
-        try {
-            myaudio.id = 'playerMyAdio';
-            myaudio.play();
-            console.log("Audio Played 2");
-        } catch (e) {
-            console.log("Audio Could not played");
-        }
-    } else if (tune == 3) {
-        var myaudio = new Audio('mp3/tune3.mp3');
-        try {
-            myaudio.id = 'playerMyAdio';
-            myaudio.play();
-            console.log("Audio Played 3");
-        } catch (e) {
-            console.log("Audio Could not played");
-        }
-    } else if (tune == 4) {
-        var myaudio = new Audio('mp3/tune4.mp3');
-        try {
-            myaudio.id = 'playerMyAdio';
-            myaudio.play();
-            console.log("Audio Played 4");
-        } catch (e) {
-            console.log("Audio Could not played");
-        }
-    } else if (tune == 5) {
-        var myaudio = new Audio('mp3/tune5.mp3');
-        try {
-            myaudio.id = 'playerMyAdio';
-            myaudio.play();
-            console.log("Audio Played 5");
-        } catch (e) {
-            console.log("Audio Could not played");
-        }
-    } else if (tune == 7) {
-        var myaudio = new Audio('mp3/tune7.mp3');
-        try {
-            myaudio.id = 'playerMyAdio';
-            myaudio.play();
-            console.log("Audio Played 7");
-        } catch (e) {
-            console.log("Audio Could not played");
-        }
-    }
-}
+    var myAudio = new Audio();
+    myAudio.src = 'mp3/tune7.mp3';
+    myAudio.load();
+    myAudio.correctDuration = null;
 
+    myAudio.addEventListener('canplay', function(){
+
+       myAudio.play();
+       myAudio.muted = true;
+       setTimeout(function(){
+          myAudio.pause();
+          myAudio.currentTime = 0;
+          myAudio.muted = false;
+
+          myAudio.correctDuration = myAudio.duration;
+
+       },1000);
+    });
+    // if (tune == 1) {
+    //     var myaudio = new Audio('mp3/tune1.mp3');
+    //     try {
+    //         myaudio.id = 'playerMyAdio';
+    //         myaudio.play();
+    //         console.log("Audio Played 1");
+    //     } catch (e) {
+    //         console.log("Audio Could not played");
+    //     }
+    // } else if (tune == 2) {
+    //     var myaudio = new Audio('mp3/tune2.mp3');
+    //     try {
+    //         myaudio.id = 'playerMyAdio';
+    //         myaudio.play();
+    //         console.log("Audio Played 2");
+    //     } catch (e) {
+    //         console.log("Audio Could not played");
+    //     }
+    // } else if (tune == 3) {
+    //     var myaudio = new Audio('mp3/tune3.mp3');
+    //     try {
+    //         myaudio.id = 'playerMyAdio';
+    //         myaudio.play();
+    //         console.log("Audio Played 3");
+    //     } catch (e) {
+    //         console.log("Audio Could not played");
+    //     }
+    // } else if (tune == 4) {
+    //     var myaudio = new Audio('mp3/tune4.mp3');
+    //     try {
+    //         myaudio.id = 'playerMyAdio';
+    //         myaudio.play();
+    //         console.log("Audio Played 4");
+    //     } catch (e) {
+    //         console.log("Audio Could not played");
+    //     }
+    // } else if (tune == 5) {
+    //     var myaudio = new Audio('mp3/tune5.mp3');
+    //     try {
+    //         myaudio.id = 'playerMyAdio';
+    //         myaudio.play();
+    //         console.log("Audio Played 5");
+    //     } catch (e) {
+    //         console.log("Audio Could not played");
+    //     }
+    // } else if (tune == 7) {
+    //     var myaudio = new Audio('mp3/tune7.mp3');
+    //     try {
+    //         myaudio.id = 'playerMyAdio';
+    //         myaudio.play();
+    //         console.log("Audio Played 7");
+    //     } catch (e) {
+    //         console.log("Audio Could not played");
+    //     }
+    // }
+}
