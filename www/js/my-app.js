@@ -123,17 +123,15 @@ function playAudio(tune){
     myAudio.correctDuration = null;
 
     myAudio.addEventListener('canplay', function(){
-
-       myAudio.play();
-       myAudio.muted = true;
-       setTimeout(function(){
-          myAudio.pause();
-          myAudio.currentTime = 0;
-          myAudio.muted = false;
-
-          myAudio.correctDuration = myAudio.duration;
-
-       },1000);
+        myAudio.play();
+        myAudio.muted = true;
+        setTimeout(function(){
+            console.log("Audio Played 1");
+            myAudio.pause();
+            myAudio.currentTime = 0;
+            myAudio.muted = false;
+            myAudio.correctDuration = myAudio.duration;
+        },1000);
     });
     // if (tune == 1) {
     //     var myaudio = new Audio('mp3/tune1.mp3');
