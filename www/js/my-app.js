@@ -24,6 +24,7 @@ var mainView = myApp.addView('.view-main', {
 
 myApp.onPageInit('introslide', function (page) {
     pager_id = 7;
+    // play_audio();
     playAudio(pager_id);
     $('.intro_next').click(function() {
         mainView.router.loadPage('q1.html');
@@ -116,6 +117,13 @@ myApp.onPageInit('question_2', function (page) {
     Timer.init("q2_timer", 20, function(){mainView.router.load({url:'thankyou.html'})});
 });
 
+
+function getPhoneGapPath() {
+   var path = window.location.pathname;
+   path = path.substr( path, path.length - 10 );
+   return path;
+}
+
 function playAudio(tune){
 
 //     if (device.platform == 'Android') {
@@ -151,7 +159,7 @@ function playAudio(tune){
     // });
 
     if (tune == 1) {
-        var myaudio = new Audio('mp3/tune1.mp3');
+        var myaudio = new Audio('file:///android_asset/www/mp3/tune1.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -160,7 +168,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 2) {
-        var myaudio = new Audio('mp3/tune2.mp3');
+        var myaudio = new Audio('file:///android_asset/www/mp3/tune2.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -169,7 +177,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 3) {
-        var myaudio = new Audio('mp3/tune3.mp3');
+        var myaudio = new Audio('file:///android_asset/www/mp3/tune3.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -178,7 +186,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 4) {
-        var myaudio = new Audio('mp3/tune4.mp3');
+        var myaudio = new Audio('file:///android_asset/www/mp3/tune4.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -187,7 +195,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 5) {
-        var myaudio = new Audio('mp3/tune5.mp3');
+        var myaudio = new Audio('file:///android_asset/www/mp3/tune5.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -196,7 +204,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 7) {
-        var myaudio = new Audio('mp3/tune7.mp3');
+        var myaudio = new Audio('file:///android_asset/www/mp3/tune7.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -206,3 +214,77 @@ function playAudio(tune){
         }
     }
 }
+
+
+        // function play_audio() {
+        //     playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+        // }
+
+        // // Audio player
+        // //
+        // var my_media = null;
+        // var mediaTimer = null;
+
+        // // Play audio
+        // //
+        // function playAudio(src) {
+        //     my_media = new Media(src, onSuccess, onError);
+        //     my_media.play();
+
+        //     // Update my_media position every second
+        //     if (mediaTimer == null) {
+        //         mediaTimer = setInterval(function() {
+        //             // get my_media position
+        //             my_media.getCurrentPosition(
+        //                 // success callback
+        //                 function(position) {
+        //                     if (position > -1) {
+        //                         setAudioPosition((position) + " sec");
+        //                     }
+        //                 },
+        //                 // error callback
+        //                 function(e) {
+        //                     console.log("Error getting pos=" + e);
+        //                     setAudioPosition("Error: " + e);
+        //                 }
+        //             );
+        //         }, 1000);
+        //     }
+        // }
+
+        // // Pause audio
+        // // 
+        // function pauseAudio() {
+        //     if (my_media) {
+        //         my_media.pause();
+        //     }
+        // }
+
+        // // Stop audio
+        // // 
+        // function stopAudio() {
+        //     if (my_media) {
+        //         my_media.stop();
+        //     }
+        //     clearInterval(mediaTimer);
+        //     mediaTimer = null;
+        // }
+
+        // // onSuccess Callback
+        // //
+        // function onSuccess() {
+        //     console.log("playAudio():Audio Success");
+        // }
+
+        // // onError Callback 
+        // //
+        // function onError(error) {
+        //     alert('code: '    + error.code    + '\n' + 
+        //           'message: ' + error.message + '\n');
+        // }
+
+        // // Set audio position
+        // // 
+        // function setAudioPosition(position) {
+        //     document.getElementById('audio_position').innerHTML = position;
+        // }

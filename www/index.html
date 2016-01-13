@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
     <meta charset="utf-8">
@@ -147,26 +148,26 @@
       }
 
       function onDeviceReady() {
-        navigator.tts.startup(win, fail);
+        playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
       }
 
       function startupWin(result) {
-          console.log("Startup win");
-          console.log("Result "+result);
-          if (result == 2) {
-              navigator.tts.speak("The text to speech service is ready");
-              console.log("text speech");
-          }
-        }
-
-        function win(result) {
+        console.log("Startup win");
+        console.log("Result "+result);
+        if (result == 2) {
             navigator.tts.speak("The text to speech service is ready");
-            console.log(result);
+            console.log("text speech");
         }
+      }
 
-        function fail(result) {
-            console.log("Error = " + result);
-        }
-      </script>
+      function win(result) {
+        navigator.tts.speak("The text to speech service is ready");
+        console.log(result);
+      }
+
+      function fail(result) {
+          console.log("Error = " + result);
+      }
+    </script>
   </body>
 </html>
