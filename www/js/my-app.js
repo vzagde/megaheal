@@ -126,7 +126,7 @@ function getPhoneGapPath() {
 
 function playAudio(tune){
     if (tune == 1) {
-        var myaudio = new Audio('/android_asset/www/mp3/tune1.mp3');
+        var myaudio = new Audio('/mp3/tune1.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -135,7 +135,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 2) {
-        var myaudio = new Audio('/android_asset/www/mp3/tune2.mp3');
+        var myaudio = new Audio('/mp3/tune2.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -144,7 +144,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 3) {
-        var myaudio = new Audio('/android_asset/www/mp3/tune3.mp3');
+        var myaudio = new Audio('/mp3/tune3.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -153,7 +153,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 4) {
-        var myaudio = new Audio('/android_asset/www/mp3/tune4.mp3');
+        var myaudio = new Audio('/mp3/tune4.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -162,7 +162,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 5) {
-        var myaudio = new Audio('/android_asset/www/mp3/tune5.mp3');
+        var myaudio = new Audio('/mp3/tune5.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
@@ -171,7 +171,7 @@ function playAudio(tune){
             console.log("Audio Could not played");
         }
     } else if (tune == 7) {
-        var myaudio = new Audio('/android_asset/www/mp3/tune7.mp3');
+        var myaudio = new Audio('/mp3/tune7.mp3');
         try {
             myaudio.id = 'playerMyAdio';
             myaudio.play();
