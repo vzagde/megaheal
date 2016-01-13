@@ -117,22 +117,39 @@ myApp.onPageInit('question_2', function (page) {
 });
 
 function playAudio(tune){
-    var myAudio = new Audio();
-    myAudio.src = 'mp3/tune7.mp3';
-    myAudio.load();
-    myAudio.correctDuration = null;
 
-    myAudio.addEventListener('canplay', function(){
-        myAudio.play();
-        myAudio.muted = true;
-        setTimeout(function(){
-            console.log("Audio Played 1");
-            myAudio.pause();
-            myAudio.currentTime = 0;
-            myAudio.muted = false;
-            myAudio.correctDuration = myAudio.duration;
-        },100000);
-    });
+    if (device.platform == 'Android') {
+        src = 'mp3/tune7.mp3';
+    }
+    var media = new Media(src, success, error_error);
+    media.play();
+}
+
+function success() {
+    // ignore
+}
+function error_error(e) {
+    alert('great error');
+    alert(e.message);
+}
+
+    // var myAudio = new Audio();
+    // myAudio.src = 'mp3/tune7.mp3';
+    // myAudio.load();
+    // myAudio.correctDuration = null;
+
+    // myAudio.addEventListener('canplay', function(){
+    //     myAudio.play();
+    //     myAudio.muted = true;
+    //     setTimeout(function(){
+    //         console.log("Audio Played 1");
+    //         myAudio.pause();
+    //         myAudio.currentTime = 0;
+    //         myAudio.muted = false;
+    //         myAudio.correctDuration = myAudio.duration;
+    //     },100000);
+    // });
+
     // if (tune == 1) {
     //     var myaudio = new Audio('mp3/tune1.mp3');
     //     try {
@@ -188,4 +205,4 @@ function playAudio(tune){
     //         console.log("Audio Could not played");
     //     }
     // }
-}
+// }
